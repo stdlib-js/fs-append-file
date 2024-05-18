@@ -50,7 +50,6 @@
     "@stdlib/assert-is-browser": "^0.2.1",
     "@stdlib/assert-is-windows": "^0.2.1",
     "@stdlib/buffer-from-string": "^0.2.1",
-    "@stdlib/fs-append-file-package.json": "github:stdlib-js/fs-append-file-package.json#main",
     "@stdlib/fs-unlink": "^0.2.1",
     "@stdlib/fs-write-file": "^0.2.1",
     "@stdlib/process-exec-path": "^0.2.1",
