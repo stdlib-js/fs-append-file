@@ -42,13 +42,13 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import appendFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-append-file@deno/mod.js';
+import appendFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-append-file@v0.0.1-deno/mod.js';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { sync } from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-append-file@deno/mod.js';
+import { sync } from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-append-file@v0.0.1-deno/mod.js';
 ```
 
 #### appendFile( file, data\[, options], clbk )
@@ -133,7 +133,7 @@ The function accepts the same `options` and has the same defaults as [`fs.append
     <!-- eslint-disable node/no-sync -->
 
     ```javascript
-    import appendFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-append-file@deno/mod.js';
+    import appendFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-append-file@v0.0.1-deno/mod.js';
 
     // Explicitly handle the error...
     var err = appendFile.sync( '/path/to/file.txt', 'boop beep\n' );
@@ -155,7 +155,7 @@ The function accepts the same `options` and has the same defaults as [`fs.append
 
 ```javascript
 var join = require( 'path' ).join;
-import appendFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-append-file@deno/mod.js';
+import appendFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-append-file@v0.0.1-deno/mod.js';
 
 var fpath = join( __dirname, 'examples', 'fixtures', 'file.txt' );
 
