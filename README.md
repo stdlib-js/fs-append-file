@@ -42,13 +42,18 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import appendFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-append-file@deno/mod.js';
+```
+The previous example will load the latest bundled code from the deno branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/fs-append-file/tags). For example,
+
+```javascript
 import appendFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-append-file@v0.0.2-deno/mod.js';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { sync } from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-append-file@v0.0.2-deno/mod.js';
+import { sync } from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-append-file@deno/mod.js';
 ```
 
 #### appendFile( file, data\[, options], clbk )
@@ -133,7 +138,7 @@ The function accepts the same `options` and has the same defaults as [`fs.append
     <!-- eslint-disable node/no-sync -->
 
     ```javascript
-    import appendFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-append-file@v0.0.2-deno/mod.js';
+    import appendFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-append-file@deno/mod.js';
 
     // Explicitly handle the error...
     var err = appendFile.sync( '/path/to/file.txt', 'boop beep\n' );
@@ -155,7 +160,7 @@ The function accepts the same `options` and has the same defaults as [`fs.append
 
 ```javascript
 var join = require( 'path' ).join;
-import appendFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-append-file@v0.0.2-deno/mod.js';
+import appendFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-append-file@deno/mod.js';
 
 var fpath = join( __dirname, 'examples', 'fixtures', 'file.txt' );
 
