@@ -42,13 +42,13 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import appendFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-append-file@esm/index.mjs';
+import appendFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-append-file@v0.0.2-esm/index.mjs';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { sync } from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-append-file@esm/index.mjs';
+import { sync } from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-append-file@v0.0.2-esm/index.mjs';
 ```
 
 #### appendFile( file, data\[, options], clbk )
@@ -133,7 +133,7 @@ The function accepts the same `options` and has the same defaults as [`fs.append
     <!-- eslint-disable node/no-sync -->
 
     ```javascript
-    import appendFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-append-file@esm/index.mjs';
+    import appendFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-append-file@v0.0.2-esm/index.mjs';
 
     // Explicitly handle the error...
     var err = appendFile.sync( '/path/to/file.txt', 'boop beep\n' );
@@ -160,7 +160,7 @@ The function accepts the same `options` and has the same defaults as [`fs.append
 <script type="module">
 
 var join = require( 'path' ).join;
-import appendFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-append-file@esm/index.mjs';
+import appendFile from 'https://cdn.jsdelivr.net/gh/stdlib-js/fs-append-file@v0.0.2-esm/index.mjs';
 
 var fpath = join( __dirname, 'examples', 'fixtures', 'file.txt' );
 
