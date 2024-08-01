@@ -35,19 +35,172 @@ limitations under the License.
 
 > Append data to a file.
 
+<section class="installation">
 
+## Installation
 
+```bash
+npm install @stdlib/fs-append-file
+```
 
+Alternatively,
 
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+-   To use as a general utility for the command line, install the corresponding [CLI package][cli-section] globally.
 
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
 
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
 
+</section>
 
+<section class="usage">
 
+## Usage
+
+```javascript
+var appendFile = require( '@stdlib/fs-append-file' );
+```
+
+#### appendFile( file, data\[, options], clbk )
+
+Asynchronously appends `data` to a `file`.
+
+```javascript
+var join = require( 'path' ).join;
+
+var fpath = join( __dirname, 'examples', 'fixtures', 'file.txt' );
+
+appendFile( fpath, 'beep boop\n', onAppend );
+
+function onAppend( error ) {
+    if ( error ) {
+        console.log( error instanceof Error );
+        // => false
+    }
+}
+```
+
+The `data` argument may be either a `string` or a [`Buffer`][@stdlib/buffer/ctor].
+
+```javascript
+var join = require( 'path' ).join;
+var string2buffer = require( '@stdlib/buffer-from-string' );
+
+var fpath = join( __dirname, 'examples', 'fixtures', 'file.txt' );
+
+appendFile( fpath, string2buffer( 'beep boop\n' ), onAppend );
+
+function onAppend( error ) {
+    if ( error ) {
+        console.log( error instanceof Error );
+        // => false
+    }
+}
+```
+
+The function accepts the same `options` and has the same defaults as [`fs.appendFile()`][node-fs].
+
+#### appendFile.sync( file, data\[, options] )
+
+Synchronously appends `data` to a `file`.
+
+```javascript
+var join = require( 'path' ).join;
+
+var fpath = join( __dirname, 'examples', 'fixtures', 'file.txt' );
+
+var err = appendFile.sync( fpath, 'beep boop\n' );
+if ( err instanceof Error ) {
+    throw err;
+}
+```
+
+The function accepts the same `options` and has the same defaults as [`fs.appendFileSync()`][node-fs].
+
+</section>
+
+<!-- /.usage -->
+
+<section class="notes">
+
+## Notes
+
+-   The difference between this `appendFile.sync` and [`fs.appendFileSync()`][node-fs] is that [`fs.appendFileSync()`][node-fs] will throw if an `error` is encountered (e.g., if given a non-existent directory path) and this API will return an `error`. Hence, the following anti-pattern
+
+    <!-- eslint-disable node/no-sync -->
+
+    ```javascript
+    var fs = require( 'fs' );
+
+    // Check for directory path existence to prevent an error being thrown...
+    if ( fs.existsSync( '/path/to' ) ) {
+        fs.appendFileSync( '/path/to/file.txt', 'beep boop\n' );
+    }
+    ```
+
+    can be replaced by an approach which addresses existence via `error` handling.
+
+    <!-- eslint-disable node/no-sync -->
+
+    ```javascript
+    var appendFile = require( '@stdlib/fs-append-file' );
+
+    // Explicitly handle the error...
+    var err = appendFile.sync( '/path/to/file.txt', 'boop beep\n' );
+    if ( err instanceof Error ) {
+        // You choose what to do...
+        throw err;
+    }
+    ```
+
+</section>
+
+<!-- /.notes -->
+
+<section class="examples">
+
+## Examples
+
+<!-- eslint no-undef: "error" -->
+
+```javascript
+var join = require( 'path' ).join;
+var appendFile = require( '@stdlib/fs-append-file' );
+
+var fpath = join( __dirname, 'examples', 'fixtures', 'file.txt' );
+
+// Synchronously append data to a file:
+
+var error = appendFile.sync( fpath, 'beep boop\n', 'utf8' );
+// Function successfully executes and returns null
+
+console.log( error instanceof Error );
+// => false
+
+// Asynchronously append data to a file:
+
+appendFile( fpath, 'beep boop\n', onAppend );
+
+function onAppend( error ) {
+    if ( error ) {
+        console.error( 'Error: %s', error.message );
+    }
+    console.log( 'Success!!!' );
+}
+```
+
+</section>
+
+<!-- /.examples -->
+
+* * *
 
 <section class="cli">
 
-
+## CLI
 
 <section class="installation">
 
@@ -65,7 +218,7 @@ npm install -g @stdlib/fs-append-file-cli
 
 <section class="usage">
 
-## Usage
+### Usage
 
 ```text
 Usage: append-file [options] <filepath>
@@ -85,7 +238,7 @@ Options:
 
 <section class="notes">
 
-## Notes
+### Notes
 
 -   Relative output file paths are resolved relative to the current working directory.
 -   Errors are written to `stderr`.
@@ -97,7 +250,7 @@ Options:
 
 <section class="examples">
 
-## Examples
+### Examples
 
 ```bash
 $ printf 'beep boop\n' | append-file ./examples/fixtures/file.txt
@@ -114,11 +267,6 @@ $ printf 'beep boop\n' | append-file ./examples/fixtures/file.txt
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
 <section class="related">
-
-## See Also
-
--   <span class="package-name">[`@stdlib/fs-append-file`][@stdlib/fs-append-file]</span><span class="delimiter">: </span><span class="description">append data to a file.</span>
-
 
 </section>
 
@@ -137,7 +285,7 @@ This package is part of [stdlib][stdlib], a standard library for JavaScript and 
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
-### Community
+#### Community
 
 [![Chat][chat-image]][chat-url]
 
@@ -160,11 +308,11 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 
 <section class="links">
 
-[npm-image]: http://img.shields.io/npm/v/@stdlib/fs-append-file-cli.svg
-[npm-url]: https://npmjs.org/package/@stdlib/fs-append-file-cli
+[npm-image]: http://img.shields.io/npm/v/@stdlib/fs-append-file.svg
+[npm-url]: https://npmjs.org/package/@stdlib/fs-append-file
 
-[test-image]: https://github.com/stdlib-js/fs-append-file/actions/workflows/test.yml/badge.svg?branch=v0.0.2
-[test-url]: https://github.com/stdlib-js/fs-append-file/actions/workflows/test.yml?query=branch:v0.0.2
+[test-image]: https://github.com/stdlib-js/fs-append-file/actions/workflows/test.yml/badge.svg?branch=main
+[test-url]: https://github.com/stdlib-js/fs-append-file/actions/workflows/test.yml?query=branch:main
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/fs-append-file/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/fs-append-file?branch=main
