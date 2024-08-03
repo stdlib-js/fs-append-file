@@ -2,9 +2,19 @@
 
 > Package changelog.
 
-<section class="release" id="unreleased">
+<section class="release" id="v0.0.2">
 
-## Unreleased (2024-08-01)
+## 0.0.2 (2024-07-27)
+
+<section class="bug-fixes">
+
+### Bug Fixes
+
+-   [`dbe3a16`](https://github.com/stdlib-js/stdlib/commit/dbe3a166a5eefd1656d4f34026d01f25b8c39b31) - make CLI scripts executable [(#2250)](https://github.com/stdlib-js/stdlib/pull/2250)
+
+</section>
+
+<!-- /.bug-fixes -->
 
 <section class="commits">
 
@@ -12,7 +22,8 @@
 
 <details>
 
--   [`22c4d29`](https://github.com/stdlib-js/stdlib/commit/22c4d29898e2b5bb4cb071a6b7f62536027eaf28) - **docs:** remove blank line _(by Athan Reines)_
+-   [`659f752`](https://github.com/stdlib-js/stdlib/commit/659f752db18317bf5fc237fdbcad0d74b61e1ed9) - **style:** add missing spaces _(by Philipp Burckhardt)_
+-   [`dbe3a16`](https://github.com/stdlib-js/stdlib/commit/dbe3a166a5eefd1656d4f34026d01f25b8c39b31) - **fix:** make CLI scripts executable [(#2250)](https://github.com/stdlib-js/stdlib/pull/2250) _(by stdlib-bot, Philipp Burckhardt)_
 
 </details>
 
@@ -26,7 +37,7 @@
 
 A total of 1 person contributed to this release. Thank you to this contributor:
 
--   Athan Reines
+-   Philipp Burckhardt
 
 </section>
 
@@ -36,21 +47,49 @@ A total of 1 person contributed to this release. Thank you to this contributor:
 
 <!-- /.release -->
 
-<section class="release" id="v0.0.2">
-
-## 0.0.2 (2024-07-27)
-
-No changes reported for this release.
-
-</section>
-
-<!-- /.release -->
-
 <section class="release" id="v0.0.1">
 
 ## 0.0.1 (2024-05-18)
 
-No changes reported for this release.
+<section class="features">
+
+### Features
+
+-   [`14dda68`](https://github.com/stdlib-js/stdlib/commit/14dda680a426741867fa3b52447d703ff1e9b8e1) - add `fs/append-file`
+
+</section>
+
+<!-- /.features -->
+
+<section class="commits">
+
+### Commits
+
+<details>
+
+-   [`075eb02`](https://github.com/stdlib-js/stdlib/commit/075eb020f403420e88a7e7b451806e0a6beebc2b) - **test:** change to relative require path _(by Philipp Burckhardt)_
+-   [`14dda68`](https://github.com/stdlib-js/stdlib/commit/14dda680a426741867fa3b52447d703ff1e9b8e1) - **feat:** add `fs/append-file` _(by Hridyanshu, Hridyanshu7, stdlib-bot, Philipp Burckhardt)_
+
+</details>
+
+</section>
+
+<!-- /.commits -->
+
+<section class="contributors">
+
+### Contributors
+
+A total of 4 people contributed to this release. Thank you to the following contributors:
+
+-   Hridyanshu
+-   Hridyanshu7
+-   Philipp Burckhardt
+-   stdlib-bot
+
+</section>
+
+<!-- /.contributors -->
 
 </section>
 
