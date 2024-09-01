@@ -80,12 +80,11 @@ A total of 1 person contributed to this release. Thank you to this contributor:
 
 ### Contributors
 
-A total of 4 people contributed to this release. Thank you to the following contributors:
+A total of 3 people contributed to this release. Thank you to the following contributors:
 
 -   Hridyanshu
 -   Hridyanshu7
 -   Philipp Burckhardt
--   stdlib-bot
 
 </section>
 
